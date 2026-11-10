@@ -7,7 +7,9 @@ Built only on the official Meta and TikTok APIs.
 > controls, the architecture decision record and the production runbook. The application source is
 > private. I'm happy to walk through the code on a call: [LinkedIn](https://www.linkedin.com/in/nadav-magen-182311323/) · [email](mailto:magennadav32@gmail.com).
 
-Designed, built and operated solo by [Nadav Magen](https://github.com/NadavM-ux) in 2026.
+Designed and built solo by [Nadav Magen](https://github.com/NadavM-ux) in 2026. **Status:** in development, not yet launched.
+
+![Reply22 landing page, running locally](docs/images/homepage.jpg)
 
 ## What it does
 
@@ -51,7 +53,7 @@ flowchart LR
 | Data | PostgreSQL 17 with Drizzle ORM, UUIDv7 keys; Redis 7 with BullMQ |
 | Storage | Cloudflare R2 through the AWS S3 SDK, presigned uploads straight from the browser |
 | Delivery | One distroless `Dockerfile` → three images (280–340 MB, non-root, no shell); GitHub Actions runs lint, typecheck, 112 tests against real Postgres and Redis, build, `pnpm audit`, and the image builds |
-| Hosting | Railway (web, api, worker, Postgres, Redis) behind Cloudflare DNS |
+| Hosting (launch target) | Railway (web, api, worker, Postgres, Redis) behind Cloudflare DNS |
 
 ## Decisions worth reading
 
